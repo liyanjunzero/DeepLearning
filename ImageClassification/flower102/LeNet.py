@@ -16,7 +16,8 @@ class LeNet(nn.Module):
         #shape: 16@5x5
         self.fc1 = nn.Linear(16*5*5,120)
         self.fc2 = nn.Linear(120,84)
-        self.fc3 = nn.Linear(84,10)
+        #this net will be used in Flower102
+        self.fc3 = nn.Linear(84,102)
     def forward(self,x):
         x = self.conv1(x)
         x = F.relu(x)
