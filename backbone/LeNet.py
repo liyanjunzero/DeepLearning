@@ -34,7 +34,7 @@ class LeNet(nn.Module):
         return x
 
 if __name__=='__main__':
-    tensor = torch.Tensor(3,32,32)
+    tensor = torch.Tensor(1,3,32,32)
     model = LeNet()
     output = model(tensor)
     print(output.shape)
