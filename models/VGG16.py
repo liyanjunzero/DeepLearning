@@ -33,7 +33,7 @@ class VGG16(nn.Module):
         self.fc3 = nn.Linear(4096, 1000)
 
         self.relu = nn.ReLU()
-        self.softmax = nn.Softmax()
+        self.softmax = nn.Softmax(1)
     def forward(self,x):
         x = self.relu(self.conv1(x))
         x = self.relu(self.conv2(x))
@@ -65,7 +65,7 @@ class VGG16(nn.Module):
         return x
     
 if __name__=='__main__':
-    tensor = torch.Tensor(3,224,224)
+    tensor = torch.Tensor(1,3,224,224)
     model = VGG16()
     pred = model(tensor)
     print(pred.shape)
