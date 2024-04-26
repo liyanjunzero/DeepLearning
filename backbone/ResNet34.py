@@ -55,7 +55,7 @@ class ResNet34(nn.Module):
                                      ResidualA(512,512))
         self.pool2 = nn.AvgPool2d(7,1)
         self.flatten = nn.Flatten()
-        self.fc = nn.Linear(512,1000)
+        self.fc = nn.Linear(512,2)
     def forward(self,x):
         out = self.conv1(x)
         out = self.pool1(out)
